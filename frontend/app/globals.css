@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Vazirmatn Variable", system-ui, sans-serif;
+  --font-logo: "Playfair Display", Georgia, serif;
+
+  /* پایه‌ی تیره */
+  --color-ink: #0b1f19;
+  --color-forest: #12302a;
+  --color-moss: #16352b;
+  --color-moss-2: #1e443a;
+  --color-snow: #eef2ec;
+  --color-mist: #b9c4be;
+  --color-fog: #a9b5ae;
+  --color-haze: #8fa197;
+
+  /* زیتونی از لوگو */
+  --color-olive: #7a8b3e;
+  --color-olive-dark: #3e4a1e;
+  --color-sage: #c9d3a0;
+
+  /* بخش‌های روشن */
+  --color-cream: #f3f1ea;
+  --color-line: #e2ded2;
+  --color-field: #cfcabb;
+  --color-deep: #12251f;
+  --color-muted: #4a5a52;
+
+  /* سرخابی برند */
+  --color-rose: #c21a6b;
+  --color-rose-dark: #a3155a;
+  --color-rose-light: #f06aa8;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink text-snow font-sans leading-[1.8] antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-rose-light);
+    outline-offset: 3px;
+  }
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-[1200px] px-6;
+}
+
+@utility btn {
+  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-6 font-bold transition-colors;
+}
+
+@utility btn-primary {
+  @apply bg-rose text-white hover:bg-rose-dark;
+}
+
+@utility btn-ghost {
+  @apply border-[1.5px] border-snow/35 text-snow hover:border-snow/70;
+}
+
+@utility eyebrow {
+  @apply text-sm font-bold;
+}
